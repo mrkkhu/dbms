@@ -12,5 +12,6 @@ insert into Orders values(505,105,1800.00,'05-feb-2026','Cancelled');
 
 //queries
 
-1-> select OrderId from Orders where OrderAmount > 3000  ORDER BY OrderId desc;
+1->select OrderId,OrderAmount From Orders where OrderAmount>3000 Order by  OrderAmount desc;
+
 2->select OrderId from Orders where OrderStatus = 'pending' or OrderStatus='Shipped' and OrderAmount>2000;
