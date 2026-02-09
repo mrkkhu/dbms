@@ -1,0 +1,16 @@
+
+CREATE TABLE Customers(CustomerID number(10) primary key,CustomerName varchar2(20),city varchar2(10) default 'Delhi',Email varchar2(20) unique,Age number(5) check(age>18));
+
+//inserting 
+insert into Customers values (105,'Rohan Mehta','Jaipur','rohan@gmail.com',35);
+
+//create 
+CREATE TABLE Orders(OrderID number(10) primary key,CustomerId Number(10),OrderAmount Number(10,2) check(OrderAmount>0), OrderDate date default CURRENT_DATE ,OrderStatus  varchar2(10) default 'pending', foreign key (customerid) references customers(customerid));
+
+//insert 
+insert into Orders values(505,105,1800.00,'05-feb-2026','Cancelled');
+
+//queries
+
+1-> select OrderId from Orders where OrderAmount > 3000  ORDER BY OrderId desc;
+2->select OrderId from Orders where OrderStatus = 'pending' or OrderStatus='Shipped' and OrderAmount>2000;
