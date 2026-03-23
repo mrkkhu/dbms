@@ -1,0 +1,7 @@
+1->select Customers.Customername,Customers.City,Orders.orderamount from Customers inner join Orders on Customers.customerid=orders.customerid;
+2->select Customers.Customername,Orders.orderid,Orders.Orderstatus from Customers inner join Orders on Customers.customerid=orders.customerid where Orderstatus='Delivered';
+3->select Customers.Customername,Customers.email,Orders.OrderAmount from Customers inner join Orders on Customers.customerid=orders.customerid where city='Delhi';
+4->select Customername,sum(OrderAmount) from Customers c inner join Orders O on c.customerid=O.customerid group by customername;
+5->select city,count(OrderId) from Customers c inner join Orders O on c.customerid=O.customerid group by city;
+6->select customername,city,sum(orderamount) from Customers c inner join Orders O on c.customerid=O.customerid group by customername,city having sum(orderamount)>4000;
+
