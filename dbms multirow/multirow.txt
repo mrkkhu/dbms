@@ -1,0 +1,5 @@
+13->select emp_name,salary from employees where salary>any(select salary from employees where dept_id=10);
+
+14->select emp_name,salary from employees where salary<any(select salary from employees where dept_id=20);
+
+15->select emp_name,salary from employees where salary>any(select salary from employees where dept_id=20 and salary!=60000);
